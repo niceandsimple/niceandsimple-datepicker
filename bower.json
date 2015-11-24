@@ -1,0 +1,30 @@
+{
+  "name": "niceandsimple-datepicker",
+  "description": "Nice and simple datepicker for AngularJS with infinite scrolling calendar",
+  "main": "index.js",
+  "authors": [
+    "Andrey Matveev <hello@andreym.com> (http://andreym.com)"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "datepicker",
+    "calendar"
+  ],
+  "homepage": "https://github.com/niceandsimple/niceandsimple-datepicker",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-moment": "~0.10.2",
+    "angular": "~1.4.4",
+    "ramda": "~0.17.1",
+    "moment": "~2.10.6"
+  }
+}

@@ -1,0 +1,107 @@
+@import "../../datepickerVariables.scss";
+
+niceandsimple-datepicker-month {
+  display: block;
+  position: relative;
+
+  .month-label {
+    display: block;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    color: map-get($NSdatepicker, monthColor);
+    height: map-get($NSdatepicker, dateRadius) * 2;
+    line-height: map-get($NSdatepicker, dateRadius) * 2;
+
+    @for $i from 1 through 4 {
+      &.day-start-offset-#{$i} {
+        & + .day {
+          margin-left: $i * map-get($NSdatepicker, cellWidth);
+        }
+      }
+    }
+
+    @for $i from 5 through 6 {
+      &.day-start-offset-#{$i} {
+        & + .day {
+          margin-left: 5 * map-get($NSdatepicker, cellWidth) + ($i - 5) * map-get($NSdatepicker, cellWidthWeekend);
+        }
+      }
+    }
+  }
+
+  .day {
+    position: relative;
+    width: map-get($NSdatepicker, cellWidth);
+    display: inline-block;
+    height: map-get($NSdatepicker, cellHeight);
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: map-get($NSdatepicker, dateRadius) * 2 + map-get($NSdatepicker, hoverOffset) * 2 - map-get($NSdatepicker, selectedBorderSize) * 2;
+      height: map-get($NSdatepicker, dateRadius) * 2 + map-get($NSdatepicker, hoverOffset) * 2 - map-get($NSdatepicker, selectedBorderSize) * 2;
+    }
+
+    &:before {
+      z-index: 1;
+      transition: background 250ms;
+      margin: map-get($NSdatepicker, selectedBorderSize);
+    }
+
+    &:after {
+      z-index: 5;
+      border: solid map-get($NSdatepicker, selectedBorderSize) transparent;
+      transition: border 250ms;
+    }
+
+    .day-label {
+      position: relative;
+      z-index: 10;
+      display: block;
+      margin: map-get($NSdatepicker, hoverOffset);
+      width: map-get($NSdatepicker, dateRadius) * 2;
+      height: map-get($NSdatepicker, dateRadius) * 2;
+      line-height: map-get($NSdatepicker, dateRadius) * 2;
+      text-align: center;
+      transition: background 250ms ease;
+      color: map-get($NSdatepicker, color);
+      background: map-get($NSdatepicker, bg);
+    }
+
+    &:hover {
+      .day-label {
+        color: map-get($NSdatepicker, hoverColor);
+
+      }
+      &:before {
+        background: map-get($NSdatepicker, hoverBg);
+      }
+    }
+    &.is-weekend {
+      width: map-get($NSdatepicker, cellWidthWeekend);
+      .day-label {
+        color: map-get($NSdatepicker, weekendColor);
+        background: map-get($NSdatepicker, weekendBg);
+      }
+    }
+    &.is-today {
+      .day-label {
+        color: map-get($NSdatepicker, todayColor);
+        border-radius: map-get($NSdatepicker, dateRadius);
+        background: map-get($NSdatepicker, todayBg);
+        &:before {
+        }
+      }
+    }
+    &.is-selected {
+      &:after {
+        border-color: map-get($NSdatepicker, selectedBorder);
+      }
+    }
+  }
+}

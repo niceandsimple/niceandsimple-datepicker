@@ -1,0 +1,7 @@
+.month-label(ng-class="days.firstDayOffset ? 'day-start-offset-' + days.firstDayOffset : ''") {{ datepickerMonthCtrl.date.format("MMMM'YY") }}
+.day(
+  ng-repeat="day in days.list track by $index"
+  ng-class="{'is-today': day.isToday, 'is-disabled': day.isDisabled, 'is-weekend': day.isWeekend, 'is-selected': day.isSelected}"
+  ng-click="datepickerMonthCtrl.selectDate({date: +day.value})"
+  )
+  span.day-label {{ day.value.format('D') }}

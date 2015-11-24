@@ -1,0 +1,112 @@
+
+
+niceandsimple-datepicker {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  box-sizing: border-box;
+  padding: 20px;
+  max-width: 500px;
+  min-width: 292px;
+  border: solid 1px #F6F6F6; }
+
+niceandsimple-datepicker-month {
+  display: block;
+  position: relative; }
+  niceandsimple-datepicker-month .month-label {
+    display: block;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    color: #999;
+    height: 30px;
+    line-height: 30px; }
+    niceandsimple-datepicker-month .month-label.day-start-offset-1 + .day {
+      margin-left: 14%; }
+    niceandsimple-datepicker-month .month-label.day-start-offset-2 + .day {
+      margin-left: 28%; }
+    niceandsimple-datepicker-month .month-label.day-start-offset-3 + .day {
+      margin-left: 42%; }
+    niceandsimple-datepicker-month .month-label.day-start-offset-4 + .day {
+      margin-left: 56%; }
+    niceandsimple-datepicker-month .month-label.day-start-offset-5 + .day {
+      margin-left: 70%; }
+    niceandsimple-datepicker-month .month-label.day-start-offset-6 + .day {
+      margin-left: 85%; }
+  niceandsimple-datepicker-month .day {
+    position: relative;
+    width: 14%;
+    display: inline-block;
+    height: 50px;
+    cursor: pointer; }
+    niceandsimple-datepicker-month .day:before, niceandsimple-datepicker-month .day:after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 32px;
+      height: 32px; }
+    niceandsimple-datepicker-month .day:before {
+      z-index: 1;
+      -webkit-transition: background 250ms;
+      transition: background 250ms;
+      margin: 2px; }
+    niceandsimple-datepicker-month .day:after {
+      z-index: 5;
+      border: solid 2px transparent;
+      -webkit-transition: border 250ms;
+      transition: border 250ms; }
+    niceandsimple-datepicker-month .day .day-label {
+      position: relative;
+      z-index: 10;
+      display: block;
+      margin: 3px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      -webkit-transition: background 250ms ease;
+      transition: background 250ms ease;
+      color: #000;
+      background: transparent; }
+    niceandsimple-datepicker-month .day:hover .day-label {
+      color: #000000; }
+    niceandsimple-datepicker-month .day:hover:before {
+      background: #eeeeee; }
+    niceandsimple-datepicker-month .day.is-weekend {
+      width: 15%; }
+      niceandsimple-datepicker-month .day.is-weekend .day-label {
+        color: #c00;
+        background: transparent; }
+    niceandsimple-datepicker-month .day.is-today .day-label {
+      color: #ffffff;
+      border-radius: 15px;
+      background: #c00; }
+    niceandsimple-datepicker-month .day.is-selected:after {
+      border-color: #c00; }
+
+niceandsimple-datepicker-scroll {
+  display: block;
+  min-width: 252px; }
+  niceandsimple-datepicker-scroll .viewport {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 350px; }
+    niceandsimple-datepicker-scroll .viewport:before, niceandsimple-datepicker-scroll .viewport:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      left: 0;
+      z-index: 100; }
+    niceandsimple-datepicker-scroll .viewport:before {
+      box-shadow: inset 0 10px 10px -5px white;
+      top: 0; }
+    niceandsimple-datepicker-scroll .viewport:after {
+      box-shadow: inset 0 -10px 10px -5px white;
+      bottom: 0; }
+  niceandsimple-datepicker-scroll .months-list {
+    position: relative;
+    height: 350px;
+    overflow: auto; }

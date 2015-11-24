@@ -1,0 +1,4 @@
+.viewport
+  .months-list
+    .month-item(ng-repeat="month in datepickerScrollCtrl.months track by $index | limitTo:datepickerScrollCtrl.monthListLength" id="datepicker-month-{{ month.format('MM-YYYY') }}")
+      niceandsimple-datepicker-month(date="month" select-date="datepickerScrollCtrl.selectDate(date)" selected-date="datepickerScrollCtrl.date")

@@ -1,0 +1,12 @@
+@import "../../datepickerVariables.scss";
+
+niceandsimple-datepicker {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  box-sizing: border-box;
+  padding: map-get($NSdatepicker, padding);
+  max-width: 500px;
+  min-width: 7 * (map-get($NSdatepicker, dateRadius) * 2 + map-get($NSdatepicker, hoverOffset) * 2) + 2 * map-get($NSdatepicker, padding);
+  border: solid 1px #F6F6F6;
+}
